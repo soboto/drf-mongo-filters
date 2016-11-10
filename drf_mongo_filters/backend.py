@@ -1,6 +1,7 @@
 from rest_framework.filters import BaseFilterBackend
 from drf_mongo_filters.filtersets import BaseFilterset, ModelFilterset
 
+
 class MongoFilterBackend(BaseFilterBackend):
     def filter_queryset(self, request, queryset, view):
         filter_class = getattr(view,'filter_class', None)
